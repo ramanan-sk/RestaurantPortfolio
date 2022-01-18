@@ -1,0 +1,139 @@
+<html>
+<head><style>
+body{
+	background:#121212;
+	color:white;
+}
+table {
+ border-collapse: collapse;
+ width: 50%;}
+th, td {
+ padding: 8px;
+ text-align: left;
+ border-bottom: 1px groove #ddd;}
+ }
+ input{
+ 	border-radius:50%;
+ }
+</style>
+<script>
+function fun(){
+var fname="",lname="",contact="",mail="",billadd="",deladd="",ccnum="",expm="",expy="",c="";
+fname=document.getElementById("fname").value;
+lname=document.getElementById("lname").value;
+contact=document.getElementById("contact").value;
+mail=document.getElementById("mail").value;
+billadd=document.getElementById("billadd").value;
+deladd=document.getElementById("deladd").value;
+ccnum=document.getElementById("ccnum").value;
+expm=document.getElementById("expmonth").value;
+expy=document.getElementById("expyear").value;
+c=document.getElementById("delivery_address").value;
+if(fname=="")
+{alert("First name is required");return;}
+if(contact=="")
+{alert("Contactnumber is required");return;}
+if(billadd=="")
+{alert("Address is required");return;}
+if(deladd==""){
+if(c.checked==false)
+{alert("Delivery address is required");return;}
+if(ccnum=="")
+{alert("Card number is required");return;}
+if(ccnum.length>12)
+{alert("Enter a valid card number");return;}
+if(expm=="")
+{alert("Expiry month is required");return;}
+if(expy=="")
+{alert("Expiry year is required");return;}
+alert("Your order has been placed successfully");
+}
+</script>
+</head>
+<body>
+<h2>Amazon</h2>
+<p>
+<fieldset>
+<legend>Customer Details </legend>
+<label for="fname">First Name</label>
+<input type="text" id="fname" name="fname">
+<label for="lname">Last Name</label>
+<input type="text" id="lname" name="lname"><br><br>
+<label for="contact">Contact Number</label>
+<input type="text" id="contact" name="contact"><br><br>
+<label for="mail">Email-id</label>
+<input type="text" id="mail" name="mail"><br><br>
+<textarea id="billadd">Address...</textarea>
+</fieldset>
+<fieldset>
+<legend>Product Details</legend>
+<table>
+<tr>
+<th>S.No.</th>
+<th>Product Number</th>
+<th>Product Name</th>
+<th>Price per unit</th>
+<th>Quantity</th>
+</tr>
+<tr>
+<td>1</td>
+<td>21133</td>
+<td>Hand sanitizer</td>
+<td>$4.75</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>233</td>
+<td>BandAid</td>
+<td>$0.5</td>
+<td>40</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3234</td>
+<td>Disposable Mask</td>
+<td>$5</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2311</td>
+<td>Gloves</td>
+<td>$2</td>
+<td>2 pairs</td>
+</tr>
+<tr>
+<td>5</td>
+<td>23</td>
+<td>Hand Wash</td>
+<td>$3</td>
+<td>1</td>
+</tr>
+</table>
+<br>
+<textarea id="deladd">Delivery Address...</textarea>
+<input type="checkbox" id="delivery_address" name="delivery_address">Billing and the delivery
+address is the same</label>
+</fieldset>
+<fieldset>
+<legend>Method of Payment</legend>
+<label for="card">Credit Card type</label>
+<select id="card">
+<option value="visa">Visa</option>
+<option value="cashback">CashBack</option>
+<option value="black">Black</option>
+<option value="platinum">Platinum</option>
+</select>
+<label for="ccnum">Credit card number</label>
+<input type="text" id="ccnum" name="ccnum">
+<label for="expmonth">Expiry month</label>
+<input type="text" id="expmonth" name="expmonth">
+<label for="expyear">Expiry year</label>
+<input type="text" id="expyear" name="expyear">
+</fieldset>
+<br>
+<center><button onclick="fun()">Place Order</button></center>
+</p>
+</body>
+</html>
